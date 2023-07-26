@@ -1,0 +1,102 @@
+;;; Scheme Recursive Art Contest Entry
+;;;
+;;; Please do not include your name or personal info in this file.
+;;;
+;;; Title: <Your title here>
+;;;
+;;; Description:
+;;;   <a minimalist portrait of my cat,
+;;;    cloudy, i hope it captures her essence.
+;;;    i am so excited to see cloudy this winter break.>
+
+
+(define (move x y)
+(pu)
+(setposition x y)
+(pd)
+)
+
+(define (background)
+(color "#95CAFF")
+(begin_fill)
+(move -500 -500)
+(fd 1000)
+(rt 90)
+(fd 1000)
+(rt 90)
+(fd 1000)
+(rt 90)
+(fd 1000)
+(end_fill)
+(color "black")
+(rt 90))
+
+(define (nose) (color "pink")
+  (penup)
+  (goto 20 0)
+  (circle 20 180)
+  (pendown)
+  (begin_fill)
+  (circle 20 180)
+  (end_fill)
+  (ht))
+
+
+(define (triangle x1 y1 l c)
+(goto x1 y1)
+(seth 90)
+(begin_fill)
+(fd l)
+(lt 120)
+(fd l)
+(lt 120)
+(fd l)
+(color c)
+(end_fill)
+)
+(define (lefteye)   (color "green")
+(penup)
+(setposition -70 40)
+(pendown)
+(begin_fill)
+(circle 25)
+(end_fill)
+(penup))
+(define (righteye)   (color "green")
+(penup)
+(setposition 120 40)
+(pendown)
+(begin_fill)
+(circle 25)
+(end_fill)
+(penup))
+(define (leftwhiskers)   (setposition -220 0)
+(color "black")
+(pendown)
+(setposition -90 -10)
+(penup)
+(setposition -20 -20)
+)
+(define (rightwhiskers) (setposition 220 0)
+(color "black")
+(pendown)
+(setposition 90 -10)
+(penup)
+(setposition -20 -20)
+)
+(define (head)
+(pu)
+(goto 250 0)
+(pd)
+(color "white")
+(begin_fill)
+(circle 250)
+(end_fill)
+)
+(define (draw) (speed 10) (pu)
+(ht) (background) (head) (lefteye) (righteye) (rightwhiskers) (leftwhiskers) (nose) 
+  (exitonclick))
+
+; Please leave this last line alone.  You may add additional procedures above
+; this line.
+(draw)
